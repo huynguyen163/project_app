@@ -1,13 +1,11 @@
-const express = require('express')
+// const express = require('express');
+// const {getHomepage, getAbc, getHuy, postCreateUser,
+// getCreateUsers, getUpdatePage, postUpdatePage, postDeletePage, postDeleteUser} = require('../controllers/homeController');
+import express from 'express';
 const router = express.Router();
-const {getHomepage, getAbc, getHuy} = require('../controllers/homeController');
-
+import homeController from '../controllers/homeController';
 
 // router.Method('/route', handler)
-router.get('/', getHomepage);
-
-router.get('/abc', getAbc);
-
-router.get('/huy',getHuy)
+router.get('/', homeController.getHomepage);
 
 module.exports = router;

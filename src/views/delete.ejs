@@ -1,0 +1,39 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete-User</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/create">Create</a>
+    </div>
+<%= JSON.stringify(userId) %>
+
+    <form action="/delete-user" method="post" >
+        <div class="form-add-new">
+            <fieldset>
+            <legend>Delete a user</legend>
+            <!-- d-none là thuộc tính tạo trong css để ẩn trường Id -->
+                <div class="input-group d-none">  
+                    <label>Id: </label>
+                    <input type="text" name="id" value="<%= userId.id %>">
+                </div>
+                <label>Are you sure delete this email?</label>
+                <div class="input-group">
+                    <label>Email: </label>
+                    <input type="text" name="email" value="<%= userId.email %>">
+                </div>
+
+                <div class="button-delete-user">
+                    <button>Confirm</button>
+                </div> 
+            </fieldset>
+        </div> 
+    </form>
+
+    
+</body>
+</html>
